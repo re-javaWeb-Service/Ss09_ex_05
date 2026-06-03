@@ -1,0 +1,4 @@
+### 2 lý do JSON log vượt trội hơn Text log khi đẩy lên ELK/Datadog:
+
+1. **Dễ dàng phân tích (Machine-readable):** Log dạng Text chỉ là một chuỗi văn bản dài, hệ thống monitor phải dùng Regex (biểu thức chính quy) rất phức tạp và tốn tài nguyên để bóc tách thông tin. Ngược lại, JSON tổ chức dữ liệu theo dạng Key-Value (ví dụ: `"level": "ERROR"`, `"errorCode": "500"`), giúp máy tính (ELK/Datadog) có thể parse (đọc hiểu) và index (đánh chỉ mục) ngay lập tức với tốc độ cực nhanh.
+2. **Khả năng mở rộng ngữ cảnh (Rich Context) và Vẽ biểu đồ:** Với JSON, chúng ta có thể dễ dàng chèn thêm vô số các trường dữ liệu tùy chỉnh (Custom Fields) như `requestId`, `userId`, `clientIp` mà không làm hỏng cấu trúc log cũ. Nhờ các trường dữ liệu được bóc tách rõ ràng này, ELK/Datadog có thể dễ dàng query, filter và trực quan hóa dữ liệu thành các biểu đồ (Dashboard) theo thời gian thực (ví dụ: Biểu đồ đếm số lượng lỗi 500 của từng `userId` trong ngày)."# Ss09_ex_05" 
